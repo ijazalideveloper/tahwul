@@ -3,6 +3,7 @@
 import { Header } from "@/components/header";
 import { StatCardsRow } from "@/components/dashboard/stat-cards-row";
 import { cards } from "@/lib/data";
+import { ProjectTimeline } from "@/components/dashboard/project-timeline";
 
 
 
@@ -15,6 +16,10 @@ export default function DashboardPage() {
       <div className="flex-1 p-6 space-y-6">
         {/* Stats Cards Row - Evidence Stats */}
         <StatCardsRow items={cards} />
+
+        {/* Project Timeline */}
+        <ProjectTimeline />
+
       </div>
     </div>
   );
