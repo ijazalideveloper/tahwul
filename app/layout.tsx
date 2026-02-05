@@ -11,7 +11,9 @@ const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Tahwul - Enabling Digital Transformation',
-  description: 'Enabling Digital Transformation',
+  description:
+    'Enabling Digital Transformation',
+  
 }
 
 export default function RootLayout({
