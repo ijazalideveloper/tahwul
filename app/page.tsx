@@ -1,11 +1,10 @@
 "use client";
 
 import { Header } from "@/components/header";
-import { StatCardsRow } from "@/components/dashboard/stat-cards-row";
-import { cards } from "@/lib/data";
 import { ProjectTimeline } from "@/components/dashboard/project-timeline";
-
-
+import { StatCardsRow } from "@/components/dashboard/stat-cards-row";
+import { cards, complianceScore } from "@/lib/data";
+import { GaugeCard } from "@/components/dashboard/gauge-card";
 
 export default function DashboardPage() {
   return (
@@ -20,6 +19,13 @@ export default function DashboardPage() {
         {/* Project Timeline */}
         <ProjectTimeline />
 
+        {/* Compliance Score Gauge */}
+        <GaugeCard
+          title="Overall Compliance Score"
+          value={complianceScore.overallScore}
+          subtitle="Readiness Level"
+          color="#DB1F26"
+        />
       </div>
     </div>
   );

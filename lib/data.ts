@@ -56,3 +56,24 @@ export const milestones: TimelineMilestone[] = [
     status: 'upcoming',
   },
 ]
+
+export const complianceScore = {
+  overallScore: 65,
+  categories: [
+    { name: 'Basic Standards 2025', score: 65, maxScore: 100 },
+    { name: 'Evidence Collection', score: 78, maxScore: 100 },
+    { name: 'Control Testing', score: 85, maxScore: 100 },
+    { name: 'Risk Assessment', score: 75, maxScore: 100 },
+  ],
+}
+
+
+export const auditReadiness = {
+  overallScore: 82,
+  categories: [
+    { name: 'Documentation', score: 90, maxScore: 100 },
+    { name: 'Evidence Collection', score: 78, maxScore: 100 },
+    { name: 'Control Testing', score: 85, maxScore: 100 },
+    { name: 'Risk Assessment', score: 75, maxScore: 100 },
+  ],
+}
