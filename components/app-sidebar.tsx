@@ -31,8 +31,8 @@ const navigationItems = [
     icon: Home,
   },
   {
-    title: 'Performance',
-    href: '/performance',
+    title: 'Perspectives',
+    href: '/perspectives',
     icon: Activity,
   },
   {
