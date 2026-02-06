@@ -4,7 +4,8 @@ import { Header } from "@/components/header";
 import SectionHeader from "@/components/common/sectionHeader";
 import ServiceProgressCard from "@/components/perspective/ServiceProgressCard";
 import TabbedDetailPanel from "@/components/common/TabbedDetailPanel";
-import { perspectiveTabs } from "@/lib/data";
+import { leaders, perspectiveTabs } from "@/lib/data";
+import LeadersSection from "@/components/perspective/LeadersSection";
 
 export default function PerspectivesPage() {
   return (
@@ -25,6 +26,8 @@ export default function PerspectivesPage() {
         />
 
         <TabbedDetailPanel tabs={perspectiveTabs} />
+
+        <LeadersSection leaders={leaders} />
       </div>
     </div>
   );
