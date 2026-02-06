@@ -4,8 +4,10 @@ import { Header } from "@/components/header";
 import SectionHeader from "@/components/common/sectionHeader";
 import ServiceProgressCard from "@/components/perspective/ServiceProgressCard";
 import TabbedDetailPanel from "@/components/common/TabbedDetailPanel";
-import { leaders, perspectiveTabs } from "@/lib/data";
+import { leaders, perspectivePageCards, perspectiveTabs } from "@/lib/data";
 import LeadersSection from "@/components/perspective/LeadersSection";
+import { StatCard } from "@/components/dashboard/stats-cards";
+import { TrendingUp } from "lucide-react";
 
 export default function PerspectivesPage() {
   return (
@@ -24,6 +26,18 @@ export default function PerspectivesPage() {
           subtitle="Develop Comprehensive Strategic Plans For Digital Transformation Aligned With Organizational Goals"
           progress={100}
         />
+
+        <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(176px,1fr))]">
+          {perspectivePageCards.map((item, idx) => (
+            <StatCard
+              key={`${item.label}-${idx}`}
+              value={item.value}
+              label={item.label}
+              icon={item.icon}
+              variant="leftIcon"
+            />
+          ))}
+        </div>
 
         <TabbedDetailPanel tabs={perspectiveTabs} />
 

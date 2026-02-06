@@ -1,9 +1,7 @@
 // Mock data for the Audit Compliance Tracking Platform
 
 import { ArrowRight, TrendingUp, Folder } from "lucide-react";
-import type {
-  ProgressStatusCard,
-} from "@/components/dashboard/progress-status";
+import type { ProgressStatusCard } from "@/components/dashboard/progress-status";
 
 export const cards = [
   {
@@ -424,15 +422,13 @@ export const perspectiveTabs: TabConfig[] = [
             <div className="space-y-3 leading-7 rounded-2xl bg-gray-50 p-6 text-gray-900">
               <p>
                 Develop a digital transformation strategy aligned with the
-                organization's strategy and the objectives of Saudi Vision
-                2030.
+                organization's strategy and the objectives of Saudi Vision 2030.
               </p>
             </div>
             <div className="space-y-3 leading-7 rounded-2xl bg-gray-50 p-6 text-gray-900 mt-[16]">
               <p>
-                Prepare A Digital Transformation Strategy For The Transition
-                To Electronic Government Transactions, Including The
-                Following:
+                Prepare A Digital Transformation Strategy For The Transition To
+                Electronic Government Transactions, Including The Following:
               </p>
               <ol className="list-decimal pl-6 space-y-2">
                 <li>
@@ -493,8 +489,8 @@ export const perspectiveTabs: TabConfig[] = [
         content: (
           <div className="space-y-3 leading-7 rounded-2xl bg-gray-50 p-6 text-gray-900">
             <p>
-              Council Of Ministers Resolution No. (40) Dated 27/2/1427H,
-              Clause (16).
+              Council Of Ministers Resolution No. (40) Dated 27/2/1427H, Clause
+              (16).
             </p>
           </div>
         ),
@@ -554,4 +550,16 @@ export const leaders: Leader[] = [
     role: "Strategy Perspective",
     avatarUrl: "/avatar.jpg",
   },
+];
+
+export const perspectivePageCards = [
+  {
+    value: "4",
+    label: "Total Evidence",
+    icon: TrendingUp,
+    variant: "progress" as const,
+  },
+  { value: 3, label: "Under Review Evidence", icon: Folder },
+  { value: 2, label: "In Progress Evidence", icon: Folder },
+  { value: 1, label: "Completed Evidence", icon: Folder },
 ];
