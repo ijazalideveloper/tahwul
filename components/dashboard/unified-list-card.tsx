@@ -117,7 +117,7 @@ export function UnifiedListCard(props: UnifiedListCardProps) {
     className,
     headerDivider = true,
     dotColor = '#E31B23',
-    dotSize = 'h-3 w-3',
+    dotSize = 'h-2 w-2',
     textSize = 'text-[16px]',
     textFontWeight = 'font-normal',
     timeTextSize = 'text-[12px]',

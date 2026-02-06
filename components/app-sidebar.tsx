@@ -36,8 +36,8 @@ const navigationItems = [
     icon: Activity,
   },
   {
-    title: 'Tasks',
-    href: '/tasks',
+    title: 'Tracking',
+    href: '/tracking-screen',
     icon: LayoutGrid,
   },
   {
