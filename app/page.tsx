@@ -9,6 +9,7 @@ import {
   recentActivities,
   topPerformingLeader,
   progressStatusCards,
+  auditReadiness,
 } from "@/lib/data";
 import { GaugeCard } from "@/components/dashboard/gauge-card";
 import {
@@ -28,6 +29,9 @@ export default function DashboardPage() {
 
         {/* Project Timeline */}
         <ProjectTimeline />
+
+        {/* Progress Status */}
+        <ProgressStatus cards={progressStatusCards} />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Compliance Score Gauge */}
@@ -52,9 +56,15 @@ export default function DashboardPage() {
             dotColor="#E31B23"
           />
         </div>
-
-        {/* Progress Status */}
-        <ProgressStatus cards={progressStatusCards} />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Compliance Score Gauge */}
+          <GaugeCard
+            title="Audit Readiness"
+            value={auditReadiness.overallScore}
+            subtitle="Readiness Level"
+            color="#1EA54E"
+          />
+        </div>
       </div>
     </div>
   );
