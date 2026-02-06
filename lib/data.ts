@@ -1,6 +1,9 @@
 // Mock data for the Audit Compliance Tracking Platform
 
 import { ArrowRight, TrendingUp, Folder } from "lucide-react";
+import type {
+  ProgressStatusCard,
+} from "@/components/dashboard/progress-status";
 
 export const cards = [
   {
@@ -120,5 +123,287 @@ export const recentActivities = [
     id: 3,
     text: 'New Criterion "5.3 Digital Identity" Was Created By Admin',
     time: "1 Hour Ago",
+  },
+];
+
+export const progressStatusCards: ProgressStatusCard[] = [
+  {
+    id: 1,
+    title: "Strategy And Planning",
+    percentage: 97.78,
+    subCategories: [
+      {
+        title: "Digital Transformation",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "completed" },
+        ],
+      },
+      {
+        title: "Digital Governance",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "in-progress" },
+        ],
+      },
+      {
+        title: "Enterprise Architecture",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "completed" },
+          { number: 4, status: "completed" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Organization And Culture",
+    percentage: 70.83,
+    subCategories: [
+      {
+        title: "Digital Culture And Environment",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "in-progress" },
+          { number: 3, status: "completed" },
+        ],
+      },
+      {
+        title: "Leadership Development",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "completed" },
+          { number: 4, status: "completed" },
+        ],
+      },
+      {
+        title: "Skills & Capacity Building",
+        items: [
+          { number: 1, status: "in-progress" },
+          { number: 2, status: "in-progress" },
+          { number: 3, status: "in-progress" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Operations And Execution",
+    percentage: 80.0,
+    subCategories: [
+      {
+        title: "Business Processes",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "in-progress" },
+          { number: 3, status: "in-progress" },
+          { number: 4, status: "completed" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Business Continuity",
+    percentage: 90.59,
+    subCategories: [
+      {
+        title: "Risk Management",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "completed" },
+          { number: 4, status: "completed" },
+          { number: 5, status: "completed" },
+        ],
+      },
+      {
+        title: "Business Continuity",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "not-started" },
+          { number: 4, status: "completed" },
+          { number: 5, status: "not-started" },
+          { number: 6, status: "completed" },
+          { number: 7, status: "not-started" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Information Technology",
+    percentage: 75.0,
+    subCategories: [
+      {
+        title: "Support Systems",
+        items: [
+          { number: 1, status: "partially-uploaded" },
+          { number: 2, status: "partially-uploaded" },
+          { number: 3, status: "completed" },
+          { number: 4, status: "partially-uploaded" },
+          { number: 5, status: "partially-uploaded" },
+        ],
+      },
+      {
+        title: "IT Infrastructure",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "completed" },
+          { number: 4, status: "completed" },
+          { number: 5, status: "partially-uploaded" },
+          { number: 6, status: "partially-uploaded" },
+          { number: 7, status: "completed" },
+        ],
+      },
+      {
+        title: "Cloud Infrastructure",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "partially-uploaded" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Comprehensive Governance",
+    percentage: 64.44,
+    subCategories: [
+      {
+        title: "Governance Platforms",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "completed" },
+          { number: 4, status: "not-started" },
+          { number: 5, status: "completed" },
+          { number: 6, status: "completed" },
+          { number: 7, status: "completed" },
+          { number: 8, status: "completed" },
+          { number: 9, status: "completed" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Channels And Services",
+    percentage: 100.0,
+    subCategories: [
+      {
+        title: "Service Quality",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "completed" },
+        ],
+      },
+      {
+        title: "Digital Channels",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "completed" },
+          { number: 4, status: "completed" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Beneficiary Centralization",
+    percentage: 60.0,
+    subCategories: [
+      {
+        title: "User Engagement",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "in-progress" },
+          { number: 3, status: "in-progress" },
+          { number: 4, status: "in-progress" },
+        ],
+      },
+      {
+        title: "User Relationship",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "in-progress" },
+          { number: 3, status: "in-progress" },
+        ],
+      },
+      {
+        title: "User Experience",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "in-progress" },
+          { number: 3, status: "in-progress" },
+          { number: 4, status: "in-progress" },
+          { number: 5, status: "in-progress" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 9,
+    title: "Government Data",
+    percentage: 87.5,
+    subCategories: [
+      {
+        title: "Data Governance",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "in-progress" },
+          { number: 3, status: "in-progress" },
+        ],
+      },
+      {
+        title: "Data Usage & Availability",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "in-progress" },
+          { number: 3, status: "in-progress" },
+        ],
+      },
+      {
+        title: "Open Data",
+        items: [
+          { number: 1, status: "completed" },
+          { number: 2, status: "completed" },
+          { number: 3, status: "in-progress" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: "Research And Innovation",
+    percentage: 17.65,
+    subCategories: [
+      {
+        title: "Innovation",
+        items: [
+          { number: 1, status: "delayed" },
+          { number: 2, status: "delayed" },
+          { number: 3, status: "delayed" },
+          { number: 4, status: "delayed" },
+        ],
+      },
+      {
+        title: "Creative Solutions",
+        items: [
+          { number: 1, status: "in-progress" },
+          { number: 2, status: "in-progress" },
+        ],
+      },
+    ],
   },
 ];

@@ -21,10 +21,10 @@ export function StatCard({
     <div
       className={[
         "relative bg-white",
-        "min-w-[176px] h-[80px]",
+        "min-w-[176px] min-h-[80px]",
         "rounded-[10px]",
         "border border-[#E0E8ED]",
-        "px-4 py-3",
+        "px-4 py-4",
       ].join(" ")}
     >
       <div className="text-[#1D3557] font-extrabold text-[28px] leading-[1]">

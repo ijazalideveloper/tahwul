@@ -8,11 +8,13 @@ import {
   complianceScore,
   recentActivities,
   topPerformingLeader,
+  progressStatusCards,
 } from "@/lib/data";
 import { GaugeCard } from "@/components/dashboard/gauge-card";
 import {
   UnifiedListCard,
 } from "@/components/dashboard/unified-list-card";
+import { ProgressStatus } from "@/components/dashboard/progress-status";
 
 export default function DashboardPage() {
   return (
@@ -50,6 +52,9 @@ export default function DashboardPage() {
             dotColor="#E31B23"
           />
         </div>
+
+        {/* Progress Status */}
+        <ProgressStatus cards={progressStatusCards} />
       </div>
     </div>
   );
