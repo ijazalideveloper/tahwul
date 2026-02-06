@@ -21,13 +21,13 @@ export function ListCard({
   return (
     <div
       className={cn(
-        "bg-white rounded-[16px] border border-[#E0E8ED]",
+        "bg-white rounded-[10px] border border-[#E0E8ED]",
         className,
       )}
     >
       <div className="px-6 pt-6">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="text-[22px] font-semibold text-[#1D3557] leading-tight">
+          <h3 className="text-[16px] font-semibold text-[#1D3557] leading-tight">
             {title}
           </h3>
           {right ? <div className="shrink-0">{right}</div> : null}

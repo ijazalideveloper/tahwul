@@ -83,7 +83,7 @@ export default function TrackingPage() {
         </div>
 
         <TabbedDetailPanel tabs={perspectiveTabs} />
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[7fr_3fr]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[7fr_3fr] items-start">
           <CommentsPanel
             items={comments}
             value={text}

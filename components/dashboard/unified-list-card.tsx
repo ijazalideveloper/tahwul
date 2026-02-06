@@ -74,7 +74,7 @@ export function UnifiedListCard(props: UnifiedListCardProps) {
         <div className={contentMarginTop}>
           {items.map((item, idx) => (
             <div key={item.id}>
-              <div className={`flex items-center gap-5 ${itemPadding}`}>
+              <div className={`flex items-center gap-5 ${idx === items.length - 1 ? 'pt-4' : itemPadding}`}>
                 <Avatar className={avatarSize}>
                   {item.avatarSrc ? <AvatarImage src={item.avatarSrc} /> : null}
                   <AvatarFallback className="text-[#1D3557] font-semibold">
@@ -130,7 +130,7 @@ export function UnifiedListCard(props: UnifiedListCardProps) {
       <div className={contentMarginTop}>
         {items.map((item, idx) => (
           <div key={item.id}>
-            <div className={`flex items-start gap-5 ${itemPadding}`}>
+            <div className={`flex items-start gap-5 ${idx === items.length - 1 ? 'pt-4' : itemPadding}`}>
               <span
                 className={`mt-2 ${dotSize} rounded-full`}
                 style={{ backgroundColor: dotColor }}

@@ -27,7 +27,7 @@ function CommentCard({ item }: CommentCardProps) {
       .join("");
 
   return (
-    <div className="rounded-2xl border border-[#D9E5EC] bg-white px-6 py-5">
+    <div className="rounded-[8px] border border-[#D9E5EC] bg-white px-6 py-4">
       <div className="flex items-start justify-between gap-6">
         <div className="flex items-center gap-4 min-w-0">
           {/* Avatar */}
@@ -79,7 +79,7 @@ export default function CommentsPanel({
   return (
     <section
       className={[
-        "w-full rounded-2xl border border-[#D9E5EC] bg-white",
+        "w-full rounded-[10px] border border-[#D9E5EC] bg-white",
         "px-6 py-6",
         className,
       ].join(" ")}
@@ -94,24 +94,24 @@ export default function CommentsPanel({
 
       {/* Input */}
       <div className="mt-6">
-        <div className="rounded-2xl border border-[#D9E5EC] bg-white">
+        <div className="rounded-[8px] border border-[#D9E5EC] bg-white">
           <textarea
             value={value}
             onChange={(e) => onChange(e.target.value)}
             placeholder={placeholder}
             disabled={disabled}
             className={[
-              "w-full resize-none rounded-2xl",
-              "px-6 py-5 min-h-[180px]",
+              "w-full resize-none rounded-[8px]",
+              "px-6 py-5 min-h-[110px]",
               "text-[20px] text-[#1D3557] placeholder:text-[#8FA0AE]",
               "focus:outline-none focus:ring-2 focus:ring-[#1D3557]/10",
               disabled ? "opacity-60 cursor-not-allowed" : "",
             ].join(" ")}
           />
           
-          <div className="flex justify-end pr-4 pb-3">
+          {/* <div className="flex justify-end pr-4 pb-3">
             <span className="text-[#8FA0AE] text-xl select-none">✎</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Button */}
@@ -121,7 +121,7 @@ export default function CommentsPanel({
           disabled={disabled || !value.trim()}
           className={[
             "mt-5 inline-flex items-center gap-3",
-            "rounded-xl bg-[#1D3557] px-4 py-2",
+            "rounded-[8px] bg-[#1D3557] px-4 py-2",
             "text-white text-[16px] font-normal",
             "shadow-sm transition",
             "hover:opacity-95",

@@ -55,7 +55,7 @@ export default function TabbedDetailPanel({
   return (
     <div className={["w-full", className].join(" ")}>
       {/* Top Tabs */}
-      <div className="mb-5 inline-flex rounded-xl bg-[#E0E8ED80] p-1">
+      <div className="mb-5 inline-flex rounded-[8px] bg-[#E0E8ED80] p-1">
         {tabs.map((tab) => {
           const isActive = tab.id === activeTabId;
           return (
@@ -64,7 +64,7 @@ export default function TabbedDetailPanel({
               type="button"
               onClick={() => setActiveTabId(tab.id)}
               className={[
-                "rounded-lg px-6 py-2 text-sm font-medium transition",
+                "rounded-[8px] px-6 py-2 text-sm font-medium transition",
                 isActive
                   ? "bg-white shadow-sm"
                   : "text-gray-500 hover:text-gray-800",
@@ -77,7 +77,7 @@ export default function TabbedDetailPanel({
       </div>
 
       {/* Main Container */}
-      <div className="rounded-2xl border border-gray-200 bg-white">
+      <div className="rounded-[10px] border border-gray-200 bg-white">
         <div className="grid grid-cols-12">
           {/* Left Menu */}
           <aside className="col-span-12 md:col-span-3 border-b md:border-b-0 md:border-r border-gray-200 p-5">
@@ -90,7 +90,7 @@ export default function TabbedDetailPanel({
                     type="button"
                     onClick={() => setActiveItemId(item.id)}
                     className={[
-                      "w-full text-left rounded-xl px-5 py-4 transition",
+                      "w-full text-left rounded-[10px] px-5 py-4 transition",
                       "bg-gray-50 hover:bg-gray-100",
                       isActive
                         ? "ring-1 ring-gray-200 bg-gray-100 text-gray-900"
