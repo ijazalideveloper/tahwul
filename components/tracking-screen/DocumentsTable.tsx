@@ -2,9 +2,10 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
+import { useTableSort, type SortDir } from "@/hooks/use-table-sort";
 
-type SortDir = "asc" | "desc";
-type SortKey =
+export type SortKey =
   | "documentNumber"
   | "documentName"
   | "documentLead"
@@ -31,21 +32,6 @@ type Props = {
   onRowClick?: (row: DocumentRow) => void;
 };
 
-function parseDateValue(v: string) {
-  const t = Date.parse(v);
-  return Number.isNaN(t) ? 0 : t;
-}
-
-function compare(a: unknown, b: unknown) {
-  const av = a ?? "";
-  const bv = b ?? "";
-  if (typeof av === "number" && typeof bv === "number") return av - bv;
-  return String(av).localeCompare(String(bv), undefined, {
-    numeric: true,
-    sensitivity: "base",
-  });
-}
-
 function StatusPill({ status }: { status: string }) {
   const s = status.toLowerCase();
 
@@ -70,20 +56,13 @@ function StatusPill({ status }: { status: string }) {
 
 function SortIcon({ active, dir }: { active: boolean; dir: SortDir }) {
   return (
-    <span
-      className={[
-        "ml-2 inline-flex flex-col leading-none",
-        active ? "text-[#1D3557]" : "text-[#8FA0AE]",
-      ].join(" ")}
-      aria-hidden="true"
-    >
-      <span className={active && dir === "asc" ? "opacity-100" : "opacity-50"}>
-        ▲
-      </span>
-      <span className={active && dir === "desc" ? "opacity-100" : "opacity-50"}>
-        ▼
-      </span>
-    </span>
+    <Image
+      src="/sorting-icon.svg"
+      alt="Sort"
+      width={16}
+      height={16}
+      className={`ml-2 ${active ? "opacity-100" : "opacity-50"}`}
+    />
   );
 }
 
@@ -103,43 +82,22 @@ const columns: Col[] = [
   { key: "status", label: "Status", className: "w-[180px] text-right" },
 ];
 
+const dateKeys: SortKey[] = ["date", "dueDate"];
+
 export default function DocumentsTable({
   rows,
   className = "",
   initialSort = { key: "documentName", dir: "asc" },
   onRowClick,
 }: Props) {
-  const [sortKey, setSortKey] = React.useState<SortKey>(initialSort.key);
-  const [sortDir, setSortDir] = React.useState<SortDir>(initialSort.dir);
-
-  const sortedRows = React.useMemo(() => {
-    const copy = [...rows];
-
-    copy.sort((ra, rb) => {
-      let av: unknown = ra[sortKey];
-      let bv: unknown = rb[sortKey];
-
-      // dates
-      if (sortKey === "date" || sortKey === "dueDate") {
-        av = parseDateValue(String(av));
-        bv = parseDateValue(String(bv));
-      }
-
-      const c = compare(av, bv);
-      return sortDir === "asc" ? c : -c;
-    });
-
-    return copy;
-  }, [rows, sortKey, sortDir]);
-
-  const toggleSort = (key: SortKey) => {
-    if (key === sortKey) {
-      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
-    } else {
-      setSortKey(key);
-      setSortDir("asc");
-    }
-  };
+  const { sortedRows, sortKey, sortDir, toggleSort } = useTableSort<
+    DocumentRow,
+    SortKey
+  >({
+    rows,
+    initialSort,
+    dateKeys,
+  });
 
   return (
     <section className={["", className].join(" ")}>
@@ -160,10 +118,11 @@ export default function DocumentsTable({
                           onClick={() => toggleSort(col.key)}
                           className={[
                             "col-span-12 lg:col-span-1",
-                            "flex items-center justify-between",
+                            "flex items-center",
                             "px-3",
                             "text-left text-[12px] font-normal text-[#1D3557]",
                             "hover:opacity-90 transition",
+                            col.key === "status" ? "justify-end" : "",
                           ].join(" ")}
                           style={
                             col.key === "documentNumber"

@@ -114,7 +114,7 @@ export default function TrackingPage() {
             content: <DocumentsTable rows={documents} />,
           },
         ]} />
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[7fr_3fr] items-start">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[66%_32%] items-start">
           <CommentsPanel
             items={comments}
             value={text}
