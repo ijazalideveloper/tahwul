@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 
-type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>;
+type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>> | string;
 
 type StatCardVariant = "default" | "leftIcon";
 
@@ -13,6 +14,12 @@ type StatCardProps = {
   iconClassName?: string;
   variant?: StatCardVariant;
   iconWrapClassName?: string;
+};
+
+export type StatItem = {
+  value: string | number;
+  label: string;
+  icon?: IconType;
 };
 
 export function StatCard({
@@ -30,26 +37,37 @@ export function StatCard({
           "relative bg-white",
           "rounded-[10px]",
           "border border-[#E0E8ED]",
-          "px-4 py-4",
+          "px-4 py-4 w",
         ].join(" ")}
       >
-        <div className="text-[#1D3557] font-extrabold text-[28px] leading-none mb-4">
-          {value}
+        <div className="flex justify-between">
+          <div className="text-[#1D3557] font-extrabold text-[24px] leading-none mb-4">
+            {value}
+          </div>
+          {Icon ? (
+            typeof Icon === "string" ? (
+              <div className="relative h-[24px] w-[24px]">
+                <Image
+                  src={Icon}
+                  alt=""
+                  fill
+                  className={[" right-4 top-0", iconClassName].join(" ")}
+                />
+              </div>
+            ) : (
+              <div>
+                <Icon
+                  className={[
+                    " right-4 top-3 h-7 w-7 text-[#E31B23]",
+                    iconClassName,
+                  ].join(" ")}
+                  strokeWidth={2}
+                />
+              </div>
+            )
+          ) : null}
         </div>
-
-        <div className="text-[14px] text-[#8FA0AE] leading-none">
-          {label}
-        </div>
-
-        {Icon ? (
-          <Icon
-            className={[
-              "absolute right-4 top-3 h-7 w-7 text-[#E31B23]",
-              iconClassName,
-            ].join(" ")}
-            strokeWidth={2}
-          />
-        ) : null}
+        <div className="text-[13px] text-[#8FA0AE] leading-none">{label}</div>
       </div>
     );
   }
@@ -72,10 +90,20 @@ export function StatCard({
             iconWrapClassName,
           ].join(" ")}
         >
-          <Icon
-            className={["h-8 w-8 text-[#E31B23]", iconClassName].join(" ")}
-            strokeWidth={2}
-          />
+          {typeof Icon === "string" ? (
+            <Image
+              src={Icon}
+              alt=""
+              width={32}
+              height={32}
+              className={iconClassName}
+            />
+          ) : (
+            <Icon
+              className={["h-8 w-8 text-[#E31B23]", iconClassName].join(" ")}
+              strokeWidth={2}
+            />
+          )}
         </div>
       ) : null}
 

@@ -3,13 +3,9 @@
 import * as React from 'react'
 import { StatCard } from './stats-cards'
 
-type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>
+import type { StatItem } from './stats-cards'
 
-export type StatItem = {
-  value: string | number
-  label: string
-  icon?: IconType
-}
+export type { StatItem }
 
 export function StatCardsRow({ items }: { items: StatItem[] }) {
   return (

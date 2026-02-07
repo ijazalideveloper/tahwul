@@ -78,8 +78,8 @@ function ProgressStatusCard({ card }: { card: ProgressStatusCard }) {
         </div>
       </div>
 
-      {/* Body (UPDATED) */}
-      <div className="flex-1 flex flex-col gap-[10px] mt-[10px]">
+      {/* Body */}
+      <div className="flex-1 flex flex-col gap-[10px] mt-[10px] items-center justify-center">
         {card.subCategories.map((subCategory, idx) => (
           <div
             key={idx}

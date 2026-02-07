@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 
 const YEAR = 2026;
 
-const COMPLETED_WIDTH = 40;
+const COMPLETED_WIDTH = 33;
 
 type TimelineHeaderProps = {
   title: string;

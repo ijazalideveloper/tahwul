@@ -7,14 +7,18 @@ export const cards = [
   {
     value: "78.65%",
     label: "Overall Progress",
-    icon: TrendingUp,
+    icon: "/overall-progress.svg",
     variant: "progress" as const,
   },
-  { value: 95, label: "Total Criteria", icon: Folder },
-  { value: 52, label: "Completed Criteria", icon: Folder },
-  { value: 386, label: "Evidence Documents", icon: Folder },
-  { value: 302, label: "Evidence (Completed)", icon: Folder },
-  { value: 258, label: "Uploaded To DGA", icon: Folder },
+  { value: 95, label: "Total Criteria", icon: "/criteria.svg" },
+  { value: 52, label: "Completed Criteria", icon: "/completed-criteria.svg" },
+  { value: 386, label: "Evidence Documents", icon: "/evidence-completed.svg" },
+  {
+    value: 302,
+    label: "Evidence (Completed)",
+    icon: "/evidence-completed-01.svg",
+  },
+  { value: 258, label: "Uploaded To DGA", icon: "/upload-to-dga.svg" },
 ];
 
 export const milestones: TimelineMilestone[] = [
@@ -554,10 +558,10 @@ export const perspectivePageCards = [
   {
     value: "4",
     label: "Total Evidence",
-    icon: TrendingUp,
+    icon: "/evidance.svg",
     variant: "progress" as const,
   },
-  { value: 3, label: "Under Review Evidence", icon: Folder },
-  { value: 2, label: "In Progress Evidence", icon: Folder },
-  { value: 1, label: "Completed Evidence", icon: Folder },
+  { value: 3, label: "Under Review Evidence", icon: "/review-search.svg" },
+  { value: 2, label: "In Progress Evidence", icon: "/in-progress.svg" },
+  { value: 1, label: "Completed Evidence", icon: "/completed-evidance.svg" },
 ];
