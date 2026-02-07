@@ -158,7 +158,7 @@ export function PerformanceChart() {
       className="bg-white rounded-[10px] border border-[#E0E8ED] px-6 pt-6 pb-1"
       data-performance-chart
     >
-      <h3 className="text-[20px] font-semibold text-[#1D3557] mb-4">
+      <h3 className="text-[16px] font-semibold text-[#1D3557] leading-tight">
         12-Month Performance
       </h3>
       <div className="w-full min-h-[280px] -ml-2">

@@ -30,7 +30,7 @@ export function GaugeCard({
 
   return (
     <div className="bg-white rounded-[10px] border border-[#E0E8ED] px-6 py-6">
-      <h3 className="text-[20px] font-semibold text-[#1D3557] mb-3">{title}</h3>
+      <h3 className="text-[16px] font-semibold text-[#1D3557] leading-tight">{title}</h3>
 
       <div className="relative mx-auto mb-4 h-44 w-full max-w-sm">
         <GaugeArcIcon className="h-full w-full" />

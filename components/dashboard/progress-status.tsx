@@ -113,7 +113,7 @@ export function ProgressStatus({
     >
       {/* Header with Legend */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-[28px] font-semibold text-[#1D3557]">{title}</h2>
+        <h2 className="text-[16px] font-semibold text-[#1D3557] leading-tight">{title}</h2>
 
         {showLegend && (
           <div className="flex flex-wrap items-center gap-4">

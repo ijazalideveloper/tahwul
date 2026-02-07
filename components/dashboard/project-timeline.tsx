@@ -15,7 +15,7 @@ type TimelineHeaderProps = {
 function TimelineHeader({ title, year }: TimelineHeaderProps) {
   return (
     <div className="flex items-center justify-between mb-6">
-      <h3 className="text-[20px] font-semibold text-[#1D3557]">{title}</h3>
+      <h3 className="text-[16px] font-semibold text-[#1D3557] leading-tight">{title}</h3>
       <button className="flex items-center gap-2 h-10 px-4 rounded-[10px] border border-[#E0E8ED] bg-white text-[14px] text-[#1D3557] shadow-sm">
         <span>{year}</span>
         <ChevronDown className="h-4 w-4" />
