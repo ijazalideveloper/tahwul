@@ -1,9 +1,16 @@
 "use client";
 
-import { Search, Bell, ChevronDown, ChevronLeft } from "lucide-react";
+import { Search, Bell, ChevronDown, ChevronLeft, Settings, LogOut, User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { useSidebar } from "@/components/ui/sidebar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 
 export function Header() {
@@ -36,16 +43,37 @@ export function Header() {
           />
           <span className="absolute -top-1 -right-0 h-[7px] w-[7px] rounded-full bg-[#DB1F26]" />
         </button>
-        <div className="flex items-center gap-2 bg-[#F9FAFA] rounded-full px-2 py-1.5 cursor-pointer hover:bg-[#F5F8FA] transition-colors">
-          <Avatar className="h-6 w-6">
-            <AvatarImage src="/avatar.jpg" />
-            <AvatarFallback className="bg-[#D9D9D9] text-xs text-[#17181C]">
-              MO
-            </AvatarFallback>
-          </Avatar>
-          <span className="text-xs font-medium text-[#17181C]">Mohammad</span>
-          <ChevronDown className="h-4 w-4 text-[#17181C]" />
-        </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <div className="flex items-center gap-2 bg-[#F9FAFA] rounded-full px-2 py-1.5 cursor-pointer hover:bg-[#F5F8FA] transition-colors">
+              <Avatar className="h-6 w-6">
+                <AvatarImage src="/avatar.jpg" />
+                <AvatarFallback className="bg-[#D9D9D9] text-xs text-[#17181C]">
+                  MO
+                </AvatarFallback>
+              </Avatar>
+              <span className="text-xs font-medium text-[#17181C]">
+                Mohammad
+              </span>
+              <ChevronDown className="h-4 w-4 text-[#17181C]" />
+            </div>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-48">
+            <DropdownMenuItem>
+              <User className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Settings className="mr-2 h-4 w-4" />
+              <span>Settings</span>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem variant="destructive">
+              <LogOut className="mr-2 h-4 w-4" />
+              <span>Logout</span>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </header>
   );

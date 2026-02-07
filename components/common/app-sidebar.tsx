@@ -59,10 +59,11 @@ const navigationItems = [
 
 export function AppSidebar() {
   const pathname = usePathname();
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, state } = useSidebar();
 
   return (
     <Sidebar
+      collapsible="icon"
       className="border-r-0 w-[256px]"
       style={{ backgroundColor: "#1D3557" }}
     >
@@ -81,22 +82,21 @@ export function AppSidebar() {
         <div className="flex items-center gap-4 absolute right-[-16px] top-[13px] z-50">
           <button
             onClick={toggleSidebar}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm border border-[#E0E8ED] hover:bg-[#F5F8FA] transition-colors"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm border border-[#E0E8ED] hover:bg-[#F5F8FA] transition-colors cursor-pointer"
           >
             <Image
               src="/sidePanel.svg"
-              alt="Digital Invest"
+              alt="Toggle"
               width={14}
               height={14}
-              className="object-contain"
+              className={`object-contain transition-transform ${state === "collapsed" ? "rotate-180" : ""}`}
               priority
             />
-            {/* <ChevronLeft className="h-4 w-4 text-[#747A8B]" /> */}
           </button>
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="px-[23px] py-4">
+      <SidebarContent className={`${state === "expanded" ? "px-[23px]" : "px-[8px]"} py-4`}>
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="gap-1">

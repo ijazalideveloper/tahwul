@@ -2,24 +2,45 @@
 
 import { milestones } from "@/lib/data";
 import { ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useState } from "react";
 
-const YEAR = 2026;
+const YEARS = [2024, 2025, 2026, 2027];
 
 const COMPLETED_WIDTH = 33;
 
 type TimelineHeaderProps = {
   title: string;
   year: number;
+  onYearChange: (year: number) => void;
 };
 
-function TimelineHeader({ title, year }: TimelineHeaderProps) {
+function TimelineHeader({ title, year, onYearChange }: TimelineHeaderProps) {
   return (
     <div className="flex items-center justify-between mb-6">
-      <h3 className="text-[16px] font-semibold text-[#1D3557] leading-tight">{title}</h3>
-      <button className="flex items-center gap-2 h-10 px-4 rounded-[10px] border border-[#E0E8ED] bg-white text-[14px] text-[#1D3557] shadow-sm">
-        <span>{year}</span>
-        <ChevronDown className="h-4 w-4" />
-      </button>
+      <h3 className="text-[16px] font-semibold text-[#1D3557] leading-tight">
+        {title}
+      </h3>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <button className="flex items-center gap-2 h-10 px-4 rounded-[10px] border border-[#E0E8ED] bg-white text-[14px] text-[#1D3557] shadow-sm hover:bg-[#F5F8FA] transition-colors">
+            <span>{year}</span>
+            <ChevronDown className="h-4 w-4" />
+          </button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          {YEARS.map((y) => (
+            <DropdownMenuItem key={y} onClick={() => onYearChange(y)}>
+              {y}
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 }
@@ -27,22 +48,28 @@ function TimelineHeader({ title, year }: TimelineHeaderProps) {
 const MILESTONE_COUNT = 6;
 
 export function ProjectTimeline() {
+  const [selectedYear, setSelectedYear] = useState(2026);
+
   return (
     <div className="bg-white rounded-[10px] border border-[#E0E8ED] px-4 py-4 md:py-5">
-      <TimelineHeader title="Project Timeline" year={YEAR} />
+      <TimelineHeader
+        title="Project Timeline"
+        year={selectedYear}
+        onYearChange={setSelectedYear}
+      />
 
       <div
         className="grid mt-2 mb-2 gap-4"
-        style={{ gridTemplateColumns: `repeat(${MILESTONE_COUNT}, minmax(0, 1fr))` }}
+        style={{
+          gridTemplateColumns: `repeat(${MILESTONE_COUNT}, minmax(0, 1fr))`,
+        }}
       >
-       
         <div
           className="col-span-full relative h-4"
           style={{ gridColumn: "1 / -1" }}
         >
-          
           <div className="absolute inset-0 rounded-full bg-[#EEF3FA]" />
-          
+
           <div
             className="absolute left-0 top-0 h-4 rounded-full bg-[#1EA54E]"
             style={{ width: `${COMPLETED_WIDTH}%` }}
@@ -50,7 +77,9 @@ export function ProjectTimeline() {
 
           <div
             className="absolute inset-0 grid place-items-center pointer-events-none"
-            style={{ gridTemplateColumns: `repeat(${MILESTONE_COUNT}, minmax(0, 1fr))` }}
+            style={{
+              gridTemplateColumns: `repeat(${MILESTONE_COUNT}, minmax(0, 1fr))`,
+            }}
           >
             {milestones.map((milestone) => {
               const isInGreen = milestone.position <= COMPLETED_WIDTH;

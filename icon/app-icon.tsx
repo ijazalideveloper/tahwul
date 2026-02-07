@@ -24,7 +24,7 @@ export const GaugeArcIcon = (props: React.SVGProps<SVGSVGElement>) => (
       d="M 20 110 A 80 80 0 0 1 180 110"
       fill="none"
       stroke="#EEF3FA"
-      strokeWidth={16}
+      strokeWidth={10}
       strokeLinecap="round"
     />
   </svg>
@@ -39,7 +39,7 @@ export const GaugeProgressIcon = ({ color, value, ...props }: React.SVGProps<SVG
       d="M 20 110 A 80 80 0 0 1 180 110"
       fill="none"
       stroke={color}
-      strokeWidth={16}
+      strokeWidth={10}
       strokeLinecap="round"
       pathLength={100}
       strokeDasharray={`${value} 100`}

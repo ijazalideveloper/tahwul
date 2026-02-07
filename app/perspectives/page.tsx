@@ -7,7 +7,6 @@ import TabbedDetailPanel from "@/components/common/TabbedDetailPanel";
 import { leaders, perspectivePageCards, perspectiveTabs } from "@/lib/data";
 import LeadersSection from "@/components/perspective/LeadersSection";
 import { StatCard } from "@/components/dashboard/stats-cards";
-import { TrendingUp } from "lucide-react";
 
 export default function PerspectivesPage() {
   return (
@@ -18,7 +17,7 @@ export default function PerspectivesPage() {
       <div className="flex-1 p-6 space-y-6">
         <SectionHeader
           title="Digital Transformation Strategic Planning"
-          backHref="/services"
+          backHref="/"
         />
         <ServiceProgressCard
           badge="Strategy & Planning"

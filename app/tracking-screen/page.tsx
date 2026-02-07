@@ -17,7 +17,9 @@ import { UnifiedListCard } from "@/components/dashboard/unified-list-card";
 import CommentsPanel, {
   CommentItem,
 } from "@/components/tracking-screen/CommentsPanel";
-import DocumentsTable, { DocumentRow } from "@/components/tracking-screen/DocumentsTable";
+import DocumentsTable, {
+  DocumentRow,
+} from "@/components/tracking-screen/DocumentsTable";
 import React from "react";
 
 export default function TrackingPage() {
@@ -85,7 +87,7 @@ export default function TrackingPage() {
       <div className="flex-1 p-6 space-y-6">
         <SectionHeader
           title="Digital Transformation Strategic Planning"
-          backHref="/services"
+          backHref="/"
         />
         <ServiceProgressCard
           badge="Strategy & Planning"
@@ -106,14 +108,16 @@ export default function TrackingPage() {
           ))}
         </div>
 
-        <TabbedDetailPanel tabs={[
-          perspectiveTabs[0],
-          {
-            id: "evidence",
-            label: "Evidence",
-            content: <DocumentsTable rows={documents} />,
-          },
-        ]} />
+        <TabbedDetailPanel
+          tabs={[
+            perspectiveTabs[0],
+            {
+              id: "evidence",
+              label: "Evidence",
+              content: <DocumentsTable rows={documents} />,
+            },
+          ]}
+        />
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[66%_32%] items-start">
           <CommentsPanel
             items={comments}
