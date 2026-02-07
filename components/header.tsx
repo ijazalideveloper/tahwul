@@ -10,15 +10,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-1 flex h-[60px] items-center justify-between border-b border-[#E0E8ED] bg-white px-6">
-      {/* Left side - Collapse button */}
-      {/* <div className="flex items-center gap-4">
-        <button
-          onClick={toggleSidebar}
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm border border-[#E0E8ED] hover:bg-[#F5F8FA] transition-colors"
-        >
-          <ChevronLeft className="h-4 w-4 text-[#747A8B]" />
-        </button>
-      </div> */}
 
       {/* Center - Search */}
       <div className="flex-1 max-w-[317px] mx-4">

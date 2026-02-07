@@ -52,7 +52,7 @@ const navigationItems = [
   },
   {
     title: 'Users',
-    href: '/tracking',
+    href: '/users',
     icon: Users,
   },
 ]

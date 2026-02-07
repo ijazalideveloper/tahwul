@@ -28,17 +28,16 @@ export function StatCard({
       <div
         className={[
           "relative bg-white",
-          "min-w-[176px] min-h-[80px]",
           "rounded-[10px]",
           "border border-[#E0E8ED]",
           "px-4 py-4",
         ].join(" ")}
       >
-        <div className="text-[#1D3557] font-extrabold text-[28px] leading-[1]">
+        <div className="text-[#1D3557] font-extrabold text-[28px] leading-none mb-4">
           {value}
         </div>
 
-        <div className="absolute left-4 bottom-3 text-[14px] text-[#8FA0AE] leading-none">
+        <div className="text-[14px] text-[#8FA0AE] leading-none">
           {label}
         </div>
 
