@@ -76,7 +76,7 @@ export const auditReadiness = {
   overallScore: 82,
   categories: [
     { name: "Overdue Stds", score: 12, maxScore: 100 },
-    { name: "Missing Evidence", score: 5, maxScore: 100 }
+    { name: "Missing Evidence", score: 5, maxScore: 100 },
   ],
 };
 
