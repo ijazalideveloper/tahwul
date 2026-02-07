@@ -12,10 +12,9 @@ import {
   auditReadiness,
 } from "@/lib/data";
 import { GaugeCard } from "@/components/dashboard/gauge-card";
-import {
-  UnifiedListCard,
-} from "@/components/dashboard/unified-list-card";
+import { UnifiedListCard } from "@/components/dashboard/unified-list-card";
 import { ProgressStatus } from "@/components/dashboard/progress-status";
+import { PerformanceChart } from "@/components/dashboard/performance-chart";
 
 export default function DashboardPage() {
   return (
@@ -56,13 +55,20 @@ export default function DashboardPage() {
             dotColor="#E31B23"
           />
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[66%_32%] items-start">
+          {/* 12-Month Performance Chart */}
+          <PerformanceChart />
+
           {/* Compliance Score Gauge */}
           <GaugeCard
             title="Audit Readiness"
             value={auditReadiness.overallScore}
             subtitle="Readiness Level"
             color="#1EA54E"
+            stats={auditReadiness.categories.map((cat) => ({
+              label: cat.name,
+              value: `${cat.score}`,
+            }))}
           />
         </div>
       </div>

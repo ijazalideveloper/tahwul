@@ -29,8 +29,8 @@ export function GaugeCard({
   const showStats = stats && stats.length > 0;
 
   return (
-    <div className="bg-white rounded-[16px] border border-[#E0E8ED] px-6 py-6">
-      <h3 className="text-[20px] font-semibold text-[#1D3557] mb-6">{title}</h3>
+    <div className="bg-white rounded-[10px] border border-[#E0E8ED] px-6 py-6">
+      <h3 className="text-[20px] font-semibold text-[#1D3557] mb-3">{title}</h3>
 
       <div className="relative mx-auto mb-4 h-44 w-full max-w-sm">
         <GaugeArcIcon className="h-full w-full" />
@@ -54,10 +54,10 @@ export function GaugeCard({
       {showStats && <div className="mt-4 mb-4 h-px bg-[#E0E8ED]" />}
 
       {showStats && (
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-8 mt-8">
           {stats!.map((stat) => (
             <div key={stat.label} className="flex flex-col items-center">
-              <div className="text-[28px] font-semibold text-[#1D3557] leading-none">
+              <div className="text-[24px] font-semibold text-[#1D3557] leading-none">
                 {stat.value}
               </div>
               <div className="mt-2 text-[14px] text-[#8FA0AE] text-center">
