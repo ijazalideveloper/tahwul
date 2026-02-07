@@ -39,6 +39,7 @@ export default function DashboardPage() {
             value={complianceScore.overallScore}
             subtitle="Readiness Level"
             color="#DB1F26"
+            className="mt-10"
           />
           {/* Top Performing Perspective Leaders */}
           <UnifiedListCard

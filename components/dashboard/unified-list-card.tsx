@@ -60,7 +60,7 @@ export function UnifiedListCard(props: UnifiedListCardProps) {
       items,
       className,
       headerDivider = false,
-      avatarSize = 'h-[56px] w-[56px]',
+      avatarSize = 'h-[47px] w-[47px]',
       nameTextSize = 'text-[16px]',
       nameFontWeight = 'font-medium',
       perspectiveTextSize = 'text-[16px]',

@@ -11,6 +11,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import Image from "next/image";
 
 export function Header() {
@@ -31,18 +36,57 @@ export function Header() {
 
       {/* Right side - Notification & Profile */}
       <div className="flex items-center gap-4">
-        <button className="relative hover:opacity-80 transition-opacity">
-          {/* <Bell className="h-5 w-5 text-[#8597A8]" /> */}
-          <Image
-            src="/notification.svg"
-            alt="Digital Invest"
-            width={16}
-            height={16}
-            className="object-contain"
-            priority
-          />
-          <span className="absolute -top-1 -right-0 h-[7px] w-[7px] rounded-full bg-[#DB1F26]" />
-        </button>
+        <Popover>
+          <PopoverTrigger asChild>
+            <button className="relative hover:opacity-80 transition-opacity">
+              <Image
+                src="/notification.svg"
+                alt="Notifications"
+                width={16}
+                height={16}
+                className="object-contain"
+                priority
+              />
+              <span className="absolute -top-1 -right-0 h-[7px] w-[7px] rounded-full bg-[#DB1F26]" />
+            </button>
+          </PopoverTrigger>
+          <PopoverContent align="end" className="w-80">
+            <div className="space-y-4">
+              <h3 className="font-semibold text-sm text-[#1D3557]">
+                Notifications
+              </h3>
+              <div className="space-y-3">
+                <div className="flex gap-3 p-2 rounded-lg hover:bg-[#F5F8FA] cursor-pointer">
+                  <div className="h-2 w-2 rounded-full bg-[#DB1F26] mt-1.5" />
+                  <div className="flex-1">
+                    <p className="text-sm text-[#17181C]">
+                      Document "Strategy_Review.Pdf" Was Uploaded
+                    </p>
+                    <p className="text-xs text-[#8597A8] mt-1">5 mins ago</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 p-2 rounded-lg hover:bg-[#F5F8FA] cursor-pointer">
+                  <div className="h-2 w-2 rounded-full bg-[#DB1F26] mt-1.5" />
+                  <div className="flex-1">
+                    <p className="text-sm text-[#17181C]">
+                      Task "Review Compliance Files" Was Assigned
+                    </p>
+                    <p className="text-xs text-[#8597A8] mt-1">20 mins ago</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 p-2 rounded-lg hover:bg-[#F5F8FA] cursor-pointer">
+                  <div className="h-2 w-2 rounded-full bg-transparent border border-[#E0E8ED] mt-1.5" />
+                  <div className="flex-1">
+                    <p className="text-sm text-[#8597A8]">
+                      New Criterion "5.3 Digital Identity" Was Created
+                    </p>
+                    <p className="text-xs text-[#8597A8] mt-1">1 hour ago</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </PopoverContent>
+        </Popover>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <div className="flex items-center gap-2 bg-[#F9FAFA] rounded-full px-2 py-1.5 cursor-pointer hover:bg-[#F5F8FA] transition-colors">

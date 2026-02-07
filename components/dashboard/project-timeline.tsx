@@ -51,7 +51,7 @@ export function ProjectTimeline() {
   const [selectedYear, setSelectedYear] = useState(2026);
 
   return (
-    <div className="bg-white rounded-[10px] border border-[#E0E8ED] px-4 py-4 md:py-5">
+    <div className="bg-white rounded-[10px] border border-[#E0E8ED] px-4 py-4 md:py-5 overflow-x-auto">
       <TimelineHeader
         title="Project Timeline"
         year={selectedYear}
@@ -59,7 +59,7 @@ export function ProjectTimeline() {
       />
 
       <div
-        className="grid mt-2 mb-2 gap-4"
+        className="grid mt-2 mb-2 gap-4 min-w-[600px]"
         style={{
           gridTemplateColumns: `repeat(${MILESTONE_COUNT}, minmax(0, 1fr))`,
         }}

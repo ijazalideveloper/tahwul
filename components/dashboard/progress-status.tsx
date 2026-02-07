@@ -1,6 +1,12 @@
 "use client";
 
 import * as React from "react";
+import { ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export type StatusType =
   | "not-started"
@@ -67,12 +73,12 @@ function ProgressStatusCard({ card }: { card: ProgressStatusCard }) {
   return (
     <div className="overflow-hidden h-full flex flex-col">
       {/* Header */}
-      <div className="bg-[#1D3557] rounded-[16px] px-2 min-h-[96px] flex items-center justify-center">
+      <div className="bg-[#1D3557] rounded-[10px] px-2 min-h-[96px] flex items-center justify-center">
         <div className="text-center w-full">
           <h3 className="text-[12px] font-semibold text-white leading-tight">
             {card.title}
           </h3>
-          <div className="mt-2 text-[14px] font-bold text-white">
+          <div className="inline-flex bg-[rgba(255,255,255,0.1)] mt-2 text-[14px] font-bold text-white rounded-[50px] py-1 px-3">
             {card.percentage.toFixed(2)}%
           </div>
         </div>
@@ -83,16 +89,17 @@ function ProgressStatusCard({ card }: { card: ProgressStatusCard }) {
         {card.subCategories.map((subCategory, idx) => (
           <div
             key={idx}
-            className="flex flex-col justify-between px-2 py-3 rounded-[16px] border border-[#E0E8ED] bg-[#F5F8FB] flex-1"
+            className="rounded-[10px] border border-[#E0E8ED] bg-[#F5F8FB] flex-1 w-full px-2 py-3 flex flex-col"
           >
             <div className="text-[10px] font-normal text-[#17181C] text-center mb-[4px]">
               {subCategory.title}
             </div>
-
-            <div className="flex flex-wrap justify-center gap-2">
-              {subCategory.items.map((item, itemIdx) => (
-                <StatusCircle key={itemIdx} {...item} />
-              ))}
+            <div className="flex flex-col justify-center flex-1">
+              <div className="flex flex-wrap justify-center gap-1">
+                {subCategory.items.map((item, itemIdx) => (
+                  <StatusCircle key={itemIdx} {...item} />
+                ))}
+              </div>
             </div>
           </div>
         ))}
@@ -109,30 +116,60 @@ export function ProgressStatus({
 }: ProgressStatusProps) {
   return (
     <div
-      className={`${className} bg-white rounded-[10px] border border-[#E0E8ED] px-6 py-4 md:py-5`}
+      className={`${className} bg-white rounded-[10px] border border-[#E0E8ED] px-4 py-4 md:py-5`}
     >
       {/* Header with Legend */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-[16px] font-semibold text-[#1D3557] leading-tight">{title}</h2>
+        <h2 className="text-[16px] font-semibold text-[#1D3557] leading-tight">
+          {title}
+        </h2>
 
         {showLegend && (
-          <div className="flex flex-wrap items-center gap-4">
-            {Object.entries(STATUS_LABELS).map(([status, label]) => (
-              <div key={status} className="flex items-center gap-2">
-                <div
-                  className="h-4 w-4 rounded-full"
-                  style={{
-                    backgroundColor: STATUS_COLORS[status as StatusType],
-                  }}
-                />
-                <span className="text-[14px] text-[#17181C]">{label}</span>
-              </div>
-            ))}
-          </div>
+          <>
+            {/* Desktop Legend */}
+            <div className="hidden md:flex flex-wrap items-center gap-4">
+              {Object.entries(STATUS_LABELS).map(([status, label]) => (
+                <div key={status} className="flex items-center gap-2">
+                  <div
+                    className="h-4 w-4 rounded-full"
+                    style={{
+                      backgroundColor: STATUS_COLORS[status as StatusType],
+                    }}
+                  />
+                  <span className="text-[14px] text-[#17181C]">{label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="md:hidden flex items-center gap-2 h-10 px-4 rounded-[10px] border border-[#E0E8ED] bg-white text-[14px] text-[#1D3557] shadow-sm hover:bg-[#F5F8FA] transition-colors">
+                  <span>Legend</span>
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <div className="p-2 space-y-2">
+                  {Object.entries(STATUS_LABELS).map(([status, label]) => (
+                    <div key={status} className="flex items-center gap-2">
+                      <div
+                        className="h-4 w-4 rounded-full"
+                        style={{
+                          backgroundColor: STATUS_COLORS[status as StatusType],
+                        }}
+                      />
+                      <span className="text-[14px] text-[#17181C]">{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </>
         )}
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-4 items-stretch">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-3 items-stretch">
         {cards.map((card) => (
           <ProgressStatusCard key={card.id} card={card} />
         ))}

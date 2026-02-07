@@ -9,7 +9,7 @@ export type { StatItem }
 
 export function StatCardsRow({ items }: { items: StatItem[] }) {
   return (
-    <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(176px,1fr))]">
+    <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(150px,1fr))]">
       {items.map((item, idx) => (
         <StatCard
           key={`${item.label}-${idx}`}

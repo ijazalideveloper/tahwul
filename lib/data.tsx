@@ -1,7 +1,8 @@
-// Mock data for the Audit Compliance Tracking Platform
-
 import { ArrowRight, TrendingUp, Folder } from "lucide-react";
 import type { ProgressStatusCard } from "@/components/dashboard/progress-status";
+import { TabConfig } from "@/components/common/tabbedDetailPanel";
+import { Leader } from "@/components/perspective/leadersSection";
+
 
 export const cards = [
   {
@@ -90,21 +91,21 @@ export const topPerformingLeader = [
     name: "Ahmed Al-Ali",
     perspective: "Strategy Perspective",
     score: 96,
-    avatarSrc: "/avatar.jpeg",
+    avatarSrc: "/avatar.jpg",
   },
   {
     id: 2,
     name: "Sarah Al-Khaled",
     perspective: "Beneficiary Perspective",
     score: 94,
-    avatarSrc: "/avatar.jpeg",
+    avatarSrc: "/sarah.png",
   },
   {
     id: 3,
     name: "Mohammad Al-Mansour",
     perspective: "IT Perspective",
     score: 92,
-    avatarSrc: "/avatar.jpeg",
+    avatarSrc: "/mansoor.png",
   },
 ];
 
@@ -407,9 +408,6 @@ export const progressStatusCards: ProgressStatusCard[] = [
     ],
   },
 ];
-
-import type { TabConfig } from "@/components/common/TabbedDetailPanel";
-import { Leader } from "@/components/perspective/LeadersSection";
 
 export const perspectiveTabs: TabConfig[] = [
   {

@@ -14,6 +14,7 @@ type GaugeCardProps = {
   color?: string;
   valueSuffix?: string;
   stats?: GaugeStat[];
+  className?: string;
 };
 
 export function GaugeCard({
@@ -23,6 +24,7 @@ export function GaugeCard({
   color = "#1EA54E",
   valueSuffix = "%",
   stats,
+  className = "",
 }: GaugeCardProps) {
   const clampedValue = Math.max(0, Math.min(100, value));
 
@@ -30,9 +32,11 @@ export function GaugeCard({
 
   return (
     <div className="bg-white rounded-[10px] border border-[#E0E8ED] px-6 py-6">
-      <h3 className="text-[16px] font-semibold text-[#1D3557] leading-tight">{title}</h3>
+      <h3 className="text-[16px] font-semibold text-[#1D3557] leading-tight">
+        {title}
+      </h3>
 
-      <div className="relative mx-auto mb-4 h-44 w-full max-w-sm">
+      <div className={`${className} relative mx-auto h-44 w-full max-w-sm`}>
         <GaugeArcIcon className="h-full w-full" />
 
         <GaugeProgressIcon
