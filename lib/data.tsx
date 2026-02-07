@@ -75,10 +75,8 @@ export const complianceScore = {
 export const auditReadiness = {
   overallScore: 82,
   categories: [
-    { name: "Documentation", score: 90, maxScore: 100 },
-    { name: "Evidence Collection", score: 78, maxScore: 100 },
-    { name: "Control Testing", score: 85, maxScore: 100 },
-    { name: "Risk Assessment", score: 75, maxScore: 100 },
+    { name: "Overdue Stds", score: 12, maxScore: 100 },
+    { name: "Missing Evidence", score: 5, maxScore: 100 }
   ],
 };
 

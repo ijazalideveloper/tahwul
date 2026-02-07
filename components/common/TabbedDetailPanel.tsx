@@ -11,7 +11,8 @@ type Item = {
 export type TabConfig = {
   id: string;
   label: string;
-  items: Item[];
+  items?: Item[];
+  content?: React.ReactNode;
 };
 
 type Props = {
@@ -48,7 +49,7 @@ export default function TabbedDetailPanel({
   }, [activeTabId]);
 
   const activeItem = React.useMemo(
-    () => activeTab?.items.find((i) => i.id === activeItemId) ?? activeTab?.items?.[0],
+    () => activeTab?.items?.find((i) => i.id === activeItemId) ?? activeTab?.items?.[0],
     [activeTab, activeItemId]
   );
 
@@ -78,41 +79,47 @@ export default function TabbedDetailPanel({
 
       {/* Main Container */}
       <div className="rounded-[10px] border border-gray-200 bg-white">
-        <div className="grid grid-cols-12">
-          {/* Left Menu */}
-          <aside className="col-span-12 md:col-span-3 border-b md:border-b-0 md:border-r border-gray-200 p-5">
-            <div className="space-y-3">
-              {activeTab?.items.map((item) => {
-                const isActive = item.id === activeItemId;
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => setActiveItemId(item.id)}
-                    className={[
-                      "w-full text-left rounded-[10px] px-5 py-4 transition",
-                      "bg-gray-50 hover:bg-gray-100",
-                      isActive
-                        ? "ring-1 ring-gray-200 bg-gray-100 text-gray-900"
-                        : "text-gray-700",
-                    ].join(" ")}
-                  >
-                    <span className="block text-base font-medium leading-tight">
-                      {item.label}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </aside>
+        {activeTab?.items && activeTab.items.length > 0 ? (
+          <div className="grid grid-cols-12">
+            {/* Left Menu */}
+            <aside className="col-span-12 md:col-span-3 border-b md:border-b-0 md:border-r border-gray-200 p-5">
+              <div className="space-y-3">
+                {activeTab?.items.map((item) => {
+                  const isActive = item.id === activeItemId;
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => setActiveItemId(item.id)}
+                      className={[
+                        "w-full text-left rounded-[10px] px-5 py-4 transition",
+                        "bg-gray-50 hover:bg-gray-100",
+                        isActive
+                          ? "ring-1 ring-gray-200 bg-gray-100 text-gray-900"
+                          : "text-gray-700",
+                      ].join(" ")}
+                    >
+                      <span className="block text-base font-medium leading-tight">
+                        {item.label}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </aside>
 
-          {/* Right Content */}
-          <main className="col-span-12 md:col-span-9 p-5">
-            <div className="">
-              {activeItem?.content}
-            </div>
-          </main>
-        </div>
+            {/* Right Content */}
+            <main className="col-span-12 md:col-span-9 p-5">
+              <div className="">
+                {activeItem?.content}
+              </div>
+            </main>
+          </div>
+        ) : (
+          <div className="pt-5 px-5">
+            {activeTab?.content}
+          </div>
+        )}
       </div>
     </div>
   );

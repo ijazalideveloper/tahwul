@@ -17,6 +17,7 @@ import { UnifiedListCard } from "@/components/dashboard/unified-list-card";
 import CommentsPanel, {
   CommentItem,
 } from "@/components/tracking-screen/CommentsPanel";
+import DocumentsTable, { DocumentRow } from "@/components/tracking-screen/DocumentsTable";
 import React from "react";
 
 export default function TrackingPage() {
@@ -38,6 +39,29 @@ export default function TrackingPage() {
       avatarText: "M",
     },
   ]);
+
+  const documents: DocumentRow[] = [
+    {
+      id: 1,
+      documentNumber: "DOC-001",
+      documentName: "Digital Transformation Strategy",
+      documentLead: "Ahmed Al-Ali",
+      documentPreparer: "Sara Ibrahim",
+      date: "2025-01-15",
+      dueDate: "2025-03-15",
+      status: "Approved",
+    },
+    {
+      id: 2,
+      documentNumber: "DOC-002",
+      documentName: "Governance Model Document",
+      documentLead: "Mona Hamed",
+      documentPreparer: "Ahmed Khaled",
+      date: "2025-02-01",
+      dueDate: "2025-04-01",
+      status: "Pending Review",
+    },
+  ];
 
   const handlePost = () => {
     if (!text.trim()) return;
@@ -82,7 +106,14 @@ export default function TrackingPage() {
           ))}
         </div>
 
-        <TabbedDetailPanel tabs={perspectiveTabs} />
+        <TabbedDetailPanel tabs={[
+          perspectiveTabs[0],
+          {
+            id: "evidence",
+            label: "Evidence",
+            content: <DocumentsTable rows={documents} />,
+          },
+        ]} />
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[7fr_3fr] items-start">
           <CommentsPanel
             items={comments}
