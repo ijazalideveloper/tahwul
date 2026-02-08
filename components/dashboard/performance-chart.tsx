@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import type { ApexOptions } from "apexcharts";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const PERFORMANCE_DATA = [87, 76, 81, 42, 88, 79, 54, 89, 79, 55, 88, 78];
 const MONTHS = [
@@ -22,6 +23,8 @@ const MONTHS = [
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export default function PerformanceChart() {
+  const isMobile = useIsMobile();
+
   const options: ApexOptions = {
     chart: {
       type: "bar",
@@ -37,7 +40,7 @@ export default function PerformanceChart() {
       bar: {
         borderRadius: 4,
         borderRadiusApplication: "end",
-        columnWidth: "40px",
+        columnWidth: isMobile ? "55%" : "40px",
         distributed: false,
         rangeBarOverlap: false,
         horizontal: false,
