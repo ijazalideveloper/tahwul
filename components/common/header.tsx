@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Bell, ChevronDown, ChevronLeft, Settings, LogOut, User } from "lucide-react";
+import { Search, Bell, ChevronDown, ChevronLeft, Settings, LogOut, User, Menu } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { useSidebar } from "@/components/ui/sidebar";
@@ -23,6 +23,15 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-1 flex h-[60px] items-center justify-between border-b border-[#E0E8ED] bg-white px-6">
+      {/* Hamburger Menu */}
+      <button
+        onClick={toggleSidebar}
+        className="md:hidden hover:bg-gray-100 p-2 rounded-lg transition-colors"
+        aria-label="Toggle menu"
+      >
+        <Menu className="h-5 w-5 text-[#1D3557]" />
+      </button>
+
       {/* Center - Search */}
       <div className="flex-1 max-w-[317px] mx-4">
         <div className="relative">
