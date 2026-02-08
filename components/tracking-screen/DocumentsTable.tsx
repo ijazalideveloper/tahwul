@@ -101,8 +101,9 @@ export default function DocumentsTable({
 
   return (
     <section className={["", className].join(" ")}>
-      <div className="overflow-x-auto">
-        <table className="w-full border-separate border-spacing-0">
+      <div className="overflow-x-auto -mx-4 md:mx-0">
+        <div className="min-w-[800px]">
+          <table className="w-full border-separate border-spacing-0">
           <thead>
             <tr>
               <th colSpan={columns.length} className="p-0">
@@ -221,6 +222,7 @@ export default function DocumentsTable({
             ) : null}
           </tbody>
         </table>
+        </div>
       </div>
     </section>
   );
