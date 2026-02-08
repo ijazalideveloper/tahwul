@@ -1,7 +1,7 @@
 import { ArrowRight, TrendingUp, Folder } from "lucide-react";
 import type { ProgressStatusCard } from "@/components/dashboard/progress-status";
-import { TabConfig } from "@/components/common/tabbedDetailPanel";
-import { Leader } from "@/components/perspective/leadersSection";
+import { TabConfig } from "@/components/common/TabbedDetailPanel";
+import { Leader } from "@/components/perspective/LeadersSection";
 
 
 export const cards = [

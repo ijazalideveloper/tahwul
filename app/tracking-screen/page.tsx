@@ -1,26 +1,24 @@
 "use client";
 
-import { Header } from "@/components/common/header";
-import SectionHeader from "@/components/common/sectionHeader";
-import ServiceProgressCard from "@/components/perspective/serviceProgressCard";
-import TabbedDetailPanel from "@/components/common/tabbedDetailPanel";
+import { Header } from "@/components/common/Header";
+import SectionHeader from "@/components/common/SectionHeader";
+import ServiceProgressCard from "@/components/perspective/ServiceProgressCard";
+import TabbedDetailPanel from "@/components/common/TabbedDetailPanel";
 import {
   leaders,
   perspectivePageCards,
   perspectiveTabs,
   recentActivities,
 } from "@/lib/data";
-import LeadersSection from "@/components/perspective/leadersSection";
+import LeadersSection from "@/components/perspective/LeadersSection";
 import { StatCard } from "@/components/dashboard/stats-cards";
 import { TrendingUp } from "lucide-react";
 import { UnifiedListCard } from "@/components/dashboard/unified-list-card";
-import CommentsPanel, {
-  CommentItem,
-} from "@/components/tracking-screen/CommentsPanel";
-import DocumentsTable, {
-  DocumentRow,
-} from "@/components/tracking-screen/DocumentsTable";
+
+
 import React from "react";
+import CommentsPanel, { CommentItem } from "@/components/tracking-screen/CommentsPanel";
+import DocumentsTable, { DocumentRow } from "@/components/tracking-screen/DocumentsTable";
 
 export default function TrackingPage() {
   const [text, setText] = React.useState("");
