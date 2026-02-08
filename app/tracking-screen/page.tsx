@@ -1,6 +1,6 @@
 "use client";
 
-import SectionHeader from "@/components/common/SectionHeader";
+import SectionHeader from "@/components/common/sectionHeader";
 import ServiceProgressCard from "@/components/perspective/ServiceProgressCard";
 import TabbedDetailPanel from "@/components/common/TabbedDetailPanel";
 import {
@@ -14,7 +14,7 @@ import {
 import React from "react";
 import CommentsPanel, { CommentItem } from "@/components/tracking-screen/CommentsPanel";
 import DocumentsTable, { DocumentRow } from "@/components/tracking-screen/DocumentsTable";
-import Header from "@/components/common/Header";
+import Header from "@/components/common/header";
 import StatCard from "@/components/dashboard/stats-cards";
 import UnifiedListCard from "@/components/dashboard/unified-list-card";
 

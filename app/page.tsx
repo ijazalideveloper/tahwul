@@ -1,6 +1,6 @@
 "use client";
 
-import Header  from "@/components/common/Header";
+import Header from "@/components/common/header";
 import ProjectTimeline from "@/components/dashboard/project-timeline";
 import StatCardsRow from "@/components/dashboard/stat-cards-row";
 import {
