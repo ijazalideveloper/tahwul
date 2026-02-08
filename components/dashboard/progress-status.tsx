@@ -169,7 +169,7 @@ export default function ProgressStatus({
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-3 items-stretch">
+      <div className="grid grid-cols-2 lg:grid-cols-10 gap-3 items-stretch">
         {cards.map((card) => (
           <ProgressStatusCard key={card.id} card={card} />
         ))}
