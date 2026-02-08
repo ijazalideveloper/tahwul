@@ -22,7 +22,7 @@ export type StatItem = {
   icon?: IconType;
 };
 
-export function StatCard({
+export default function StatCard({
   value,
   label,
   icon: Icon,

@@ -1,12 +1,12 @@
 "use client";
 
-import { Header } from "@/components/common/Header";
 import SectionHeader from "@/components/common/SectionHeader";
 import ServiceProgressCard from "@/components/perspective/ServiceProgressCard";
 import TabbedDetailPanel from "@/components/common/TabbedDetailPanel";
 import { leaders, perspectivePageCards, perspectiveTabs } from "@/lib/data";
 import LeadersSection from "@/components/perspective/LeadersSection";
-import { StatCard } from "@/components/dashboard/stats-cards";
+import Header from "@/components/common/Header";
+import StatCard from "@/components/dashboard/stats-cards";
 
 export default function PerspectivesPage() {
   return (

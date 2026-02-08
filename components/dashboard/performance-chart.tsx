@@ -21,7 +21,7 @@ const MONTHS = [
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-export function PerformanceChart() {
+export default function PerformanceChart() {
   const options: ApexOptions = {
     chart: {
       type: "bar",

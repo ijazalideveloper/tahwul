@@ -47,7 +47,7 @@ function TimelineHeader({ title, year, onYearChange }: TimelineHeaderProps) {
 
 const MILESTONE_COUNT = 6;
 
-export function ProjectTimeline() {
+export default function ProjectTimeline() {
   const [selectedYear, setSelectedYear] = useState(2026);
 
   return (

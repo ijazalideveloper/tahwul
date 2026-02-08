@@ -11,7 +11,7 @@ type ListCardProps = {
   children: React.ReactNode;
 };
 
-export function ListCard({
+export default function ListCard({
   title,
   right,
   headerDivider = false,

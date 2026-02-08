@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/popover";
 import Image from "next/image";
 
-export function Header() {
+export default function Header() {
   const { toggleSidebar } = useSidebar();
 
   return (

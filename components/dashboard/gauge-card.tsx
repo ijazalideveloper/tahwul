@@ -17,7 +17,7 @@ type GaugeCardProps = {
   className?: string;
 };
 
-export function GaugeCard({
+export default function GaugeCard({
   title,
   value,
   subtitle = "Readiness Level",

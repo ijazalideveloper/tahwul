@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { ListCard } from '@/components/dashboard/list-card'
+import ListCard from './list-card'
 
 export type LeaderItem = {
   id: string | number
@@ -53,7 +53,7 @@ function initials(name: string) {
   return parts.map((p) => p[0]?.toUpperCase()).join('')
 }
 
-export function UnifiedListCard(props: UnifiedListCardProps) {
+export default function UnifiedListCard(props: UnifiedListCardProps) {
   if (props.variant === 'leaders') {
     const {
       title = 'Top Performing Perspective Leaders',

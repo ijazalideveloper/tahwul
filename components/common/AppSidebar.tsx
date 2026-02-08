@@ -57,7 +57,7 @@ const navigationItems = [
   },
 ];
 
-export function AppSidebar() {
+export default function AppSidebar() {
   const pathname = usePathname();
   const { toggleSidebar, state } = useSidebar();
 

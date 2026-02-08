@@ -108,7 +108,7 @@ function ProgressStatusCard({ card }: { card: ProgressStatusCard }) {
   );
 }
 
-export function ProgressStatus({
+export default function ProgressStatus({
   title = "Progress Status",
   cards,
   showLegend = true,

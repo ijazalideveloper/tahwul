@@ -1,8 +1,8 @@
 "use client";
 
-import { Header } from "@/components/common/Header";
-import { ProjectTimeline } from "@/components/dashboard/project-timeline";
-import { StatCardsRow } from "@/components/dashboard/stat-cards-row";
+import Header  from "@/components/common/Header";
+import ProjectTimeline from "@/components/dashboard/project-timeline";
+import StatCardsRow from "@/components/dashboard/stat-cards-row";
 import {
   cards,
   complianceScore,
@@ -11,10 +11,10 @@ import {
   progressStatusCards,
   auditReadiness,
 } from "@/lib/data";
-import { GaugeCard } from "@/components/dashboard/gauge-card";
-import { UnifiedListCard } from "@/components/dashboard/unified-list-card";
-import { ProgressStatus } from "@/components/dashboard/progress-status";
-import { PerformanceChart } from "@/components/dashboard/performance-chart";
+import GaugeCard from "@/components/dashboard/gauge-card";
+import ProgressStatus from "@/components/dashboard/progress-status";
+import UnifiedListCard from "@/components/dashboard/unified-list-card";
+import PerformanceChart from "@/components/dashboard/performance-chart";
 
 export default function DashboardPage() {
   return (

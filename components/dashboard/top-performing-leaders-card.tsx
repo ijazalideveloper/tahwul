@@ -1,6 +1,6 @@
 'use client'
 
-import { UnifiedListCard, type LeaderItem } from '@/components/dashboard/unified-list-card'
+import UnifiedListCard, { LeaderItem } from "./unified-list-card"
 
 export type TopLeaderItem = LeaderItem
 
@@ -10,7 +10,7 @@ type TopPerformingLeadersCardProps = {
   className?: string
 }
 
-export function TopPerformingLeadersCard(props: TopPerformingLeadersCardProps) {
+export default function TopPerformingLeadersCard(props: TopPerformingLeadersCardProps) {
   return <UnifiedListCard variant="leaders" {...props} />
 }
 
